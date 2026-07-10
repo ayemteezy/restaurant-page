@@ -1,3 +1,3 @@
-import "./styles/globals.css";
+import "@/styles/globals.css";
 
 const app = document.getElementById("root");

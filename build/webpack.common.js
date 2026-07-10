@@ -1,5 +1,6 @@
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import ESLintPlugin from "eslint-webpack-plugin";
 import sharpAdapter from "responsive-loader/sharp.js";
 
 export default {
@@ -9,7 +10,18 @@ export default {
     filename: "js/[name].[contenthash].js",
     clean: true,
   },
-  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: "./src/index.html" }),
+    new ESLintPlugin({
+      extensions: ["js"],
+      context: path.resolve(import.meta.dirname, "../src"),
+    }),
+  ],
+  resolve: {
+    alias: {
+      "@": path.resolve(import.meta.dirname, "../src"),
+    },
+  },
   module: {
     rules: [
       {
@@ -38,6 +50,11 @@ export default {
         test: /\.gif$/i,
         type: "asset/resource",
         generator: { filename: "assets/images/[name].[hash][ext]" },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: { filename: "assets/fonts/[name].[hash][ext]" },
       },
       {
         test: /\.(png|jpe?g)$/i,
