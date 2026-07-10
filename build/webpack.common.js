@@ -4,20 +4,29 @@ import ESLintPlugin from "eslint-webpack-plugin";
 import sharpAdapter from "responsive-loader/sharp.js";
 
 export default {
-  entry: "./src/index.js",
+  entry: path.resolve(import.meta.dirname, "../src/index.js"),
   output: {
     path: path.resolve(import.meta.dirname, "../dist"),
     filename: "js/[name].[contenthash].js",
     clean: true,
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: "./src/index.html" }),
+    new HtmlWebpackPlugin({
+      title: "Odin Restaurant Page",
+      template: path.resolve(import.meta.dirname, "../public/index.html"),
+    }),
     new ESLintPlugin({
       extensions: ["js"],
       context: path.resolve(import.meta.dirname, "../src"),
     }),
   ],
   resolve: {
+    extensions: [".js", ".json", ".ts", ".tsx", ".wasm"],
+    byDependency: {
+      esm: {
+        fullySpecified: false,
+      },
+    },
     alias: {
       "@": path.resolve(import.meta.dirname, "../src"),
     },
@@ -31,10 +40,20 @@ export default {
           {
             loader: "css-loader",
             options: {
-              modules: { localIdentName: "[name]__[local]--[hash:base64:5]" },
+              modules: {
+                localIdentName: "[name]__[local]--[hash:base64:5]",
+                namedExport: false,
+              },
             },
           },
         ],
+      },
+      {
+        test: /\.js$/i,
+        type: "javascript/auto",
+        resolve: {
+          fullySpecified: false,
+        },
       },
       {
         test: /\.css$/i,

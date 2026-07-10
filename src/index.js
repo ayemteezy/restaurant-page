@@ -1,3 +1,5 @@
-import "@/styles/globals.css";
+import App from "./app.js"; // Ensure the path correctly points to your app file
 
-const app = document.getElementById("root");
+document.addEventListener("DOMContentLoaded", () => {
+  App();
+});

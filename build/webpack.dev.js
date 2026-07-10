@@ -1,3 +1,4 @@
+import path from "node:path";
 import { merge } from "webpack-merge";
 import common from "./webpack.common.js";
 
@@ -5,9 +6,9 @@ export default merge(common, {
   mode: "development",
   devtool: "eval-source-map",
   devServer: {
-    watchFiles: ["./src/template.html"],
+    watchFiles: [path.resolve(import.meta.dirname, "../public/index.html")],
     static: {
-      directory: "./dist",
+      directory: path.resolve(import.meta.dirname, "../dist"),
     },
     open: true,
     hot: true,
