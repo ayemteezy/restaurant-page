@@ -1,9 +1,10 @@
-import "./styles/globals.css";
+import "@/globals.css";
+import { initRouter } from "@/router";
 
 export default function App() {
-  const root = document.getElementById("content");
-  if (!root) return;
+  initRouter();
 
-  // 1. Clear out any static HTML template placeholders
-  root.innerHTML = "";
+  window.addEventListener("popstate", () => {
+    initRouter();
+  });
 }

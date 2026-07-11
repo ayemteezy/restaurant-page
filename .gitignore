@@ -1,2 +1,10 @@
+# Dependency directories
 node_modules/
+
+# Webpack build output directory
 dist/
+
+# Local environment variables or log files
+.env
+*.log
+.eslintcache
