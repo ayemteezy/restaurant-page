@@ -213,7 +213,7 @@ summary {
   display: list-item;
 }
 
-/* reset */
+/* Reset */
 *,
 :root,
 body {
@@ -221,7 +221,59 @@ body {
   padding: 0;
 }
 
-/* variables */
+/* Variables */
 :root {
+  /* Neutrals */
+
+  /* --- Surfaces & Backgrounds --- */
+  --clr-primary: oklch(98.6% 0.003 48.7);
+  --clr-secondary: oklch(95% 0.013 63.9);
+  --clr-accent: oklch(66.7% 0.053 74.6);
+  --clr-dark: oklch(23.6% 0.031 52.7);
+
+  --text-primary: var(--clr-dark);
+  --text-secondary: var(--clr-primary);
+  --text-muted: oklch(86.7% 0.053 74.6);
+
+  /* Font Weights */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Font Sizes */
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-md: 1.25rem; /* 20px */
+  --fs-lg: 1.563rem; /* 25px */
+  --fs-xl: 1.953rem; /* 31px */
+  --fs-2xl: 2.441rem; /* 39px */
+
+  /* Line Heights */
+  --lh-tight: 1.25; /* For headings */
+  --lh-normal: 1.5; /* For readable paragraphs */
+  --lh-loose: 1.75;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.02em; /* Makes headings look crisp and punchy */
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em; /* Perfect for all-caps tags or buttons */
+
+  /* Spacing  */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.5rem; /* 24px */
+  --space-6: 2rem; /* 32px */
+  --space-7: 3rem; /* 48px */
+  --space-8: 4rem; /* 64px */
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px; /* Standard card & container rounded corners */
+  --radius-lg: 12px;
+  --radius-full: 9999px;
 }
-/* globals */
+/* Globals */
