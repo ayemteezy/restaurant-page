@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Space+Grotesk:wght@300..700&display=swap");
+
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
@@ -216,24 +218,37 @@ summary {
 /* Reset */
 *,
 :root,
-body {
+html {
   margin: 0;
   padding: 0;
+}
+
+html {
+  height: 100%;
 }
 
 /* Variables */
 :root {
   /* Neutrals */
+  --clr-black: oklch(0% 0 0);
+  --clr-white: oklch(100% 0 0);
 
   /* --- Surfaces & Backgrounds --- */
   --clr-primary: oklch(98.6% 0.003 48.7);
   --clr-secondary: oklch(95% 0.013 63.9);
   --clr-accent: oklch(66.7% 0.053 74.6);
+  --clr-active: oklch(78.3% 0.189 106.4);
   --clr-dark: oklch(23.6% 0.031 52.7);
+
+  --clr-accent-hover: oklch(56.7% 0.053 74.6);
 
   --text-primary: var(--clr-dark);
   --text-secondary: var(--clr-primary);
-  --text-muted: oklch(86.7% 0.053 74.6);
+  --text-muted: oklch(56.7% 0.053 74.6);
+
+  /* Font Families */
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-serif: "Crimson Text", serif;
 
   /* Font Weights */
   --fw-normal: 400;
@@ -275,5 +290,73 @@ body {
   --radius-md: 8px; /* Standard card & container rounded corners */
   --radius-lg: 12px;
   --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  /* Perfect for subtle flat elements like standard input fields or small badges */
+
+  --shadow-md:
+    0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  /* The standard "go-to" shadow for cards, navigation bars, and buttons */
+
+  --shadow-lg:
+    0 10px 15px -3px rgba(15, 23, 42, 0.08),
+    0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  /* Great for dropdown menus, popovers, and sticky floating bars */
+
+  --shadow-xl:
+    0 20px 25px -5px rgba(15, 23, 42, 0.1),
+    0 8px 10px -6px rgba(15, 23, 42, 0.05);
+  /* Reserved for top-tier elements that demand attention, like Modals and Dialog boxes */
+
+  /* --- Transitions --- */
+  --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Standard modern curve for clean hover animations */
+
+  --content-max-width: 1200px; /* Max width of your readable site layout */
+  --page-gutter: var(--space-4); /* Default 16px safe space on mobile edges */
 }
+
 /* Globals */
+body,
+#root {
+  height: 100%;
+}
+
+#layout-wrapper {
+  font-family: var(--font-sans);
+}
+
+a {
+  color: var(--clr-black);
+  text-decoration: none;
+}
+
+button {
+  color: var(--clr-primary);
+  background-color: var(--clr-accent);
+  box-shadow: var(--shadow-sm);
+
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  padding: var(--space-2) var(--space-6);
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+button:hover {
+  background-color: var(--clr-accent-hover);
+}
+
+/* Components */
+.container {
+  width: 100%;
+  max-width: var(--content-max-width, 1200px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter, 1rem);
+  padding-right: var(--page-gutter, 1rem);
+}

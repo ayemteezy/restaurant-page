@@ -1,0 +1,13 @@
+.link {
+  color: var(--clr-accent);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+
+.link:hover {
+  filter: brightness(1.2);
+}
+
+.active {
+  color: var(--clr-active);
+}
