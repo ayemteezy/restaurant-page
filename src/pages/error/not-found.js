@@ -1,3 +1,4 @@
+import createButton from "../../components/common/button";
 import styles from "./not-found.module.css";
 
 import error from "@/assets/images/error.png";
@@ -15,19 +16,18 @@ export default function createNotFoundPage() {
   textContainer.classList = styles.textContainer;
 
   const title = document.createElement("h1");
-  title.textContent = "Page Not Found";
+  title.textContent = "Looks like we're missing something";
   title.className = styles.title;
 
   const desc = document.createElement("p");
   desc.textContent =
-    "We're sorry, the page you requested could not be found. Please go back to the homepage.";
+    "We couldn't cook up the page you were looking for because it doesn't exist.";
   desc.className = styles.desc;
 
   // button
   const buttonContainer = document.createElement("a");
   buttonContainer.href = "/";
-  const button = document.createElement("button");
-  button.textContent = "Back to Home";
+  const button = createButton({ label: "Return to homepage", size: "lg" });
   // TODO: Create a button and image component
 
   buttonContainer.append(button);

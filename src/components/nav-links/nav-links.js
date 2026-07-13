@@ -2,6 +2,7 @@ import styles from "./nav-links.module.css";
 
 import { NAV_ITEMS } from "../../constants/routes";
 import createNavItem from "../nav-item/nav-item";
+import createButton from "../common/button";
 
 export default function createNavLinks() {
   const container = document.createElement("div");
@@ -14,8 +15,7 @@ export default function createNavLinks() {
     list.append(navItem);
   });
 
-  const cta = document.createElement("button");
-  cta.textContent = "Reserve";
+  const cta = createButton({ label: "Reserve" });
 
   container.append(list, cta);
 
