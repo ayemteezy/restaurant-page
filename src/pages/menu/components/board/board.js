@@ -88,10 +88,43 @@ export default function createBoard() {
 
   menu.forEach((data) => {
     const menuContainer = document.createElement("div");
+    menuContainer.className = styles.menuContainer;
+    const titleContainer = document.createElement("div");
 
     const title = document.createElement("h3");
+    title.className = styles.title;
     title.textContent = data.category;
-    menuContainer.append(title);
+
+    const separator = document.createElement("hr");
+    separator.className = styles.separator;
+
+    titleContainer.append(title, separator);
+
+    const dish = document.createElement("div");
+    dish.className = styles.dish;
+
+    data.items.forEach((item) => {
+      const info = document.createElement("div");
+      info.className = styles.info;
+      const text = document.createElement("div");
+      text.className = styles.text;
+      const name = document.createElement("h4");
+      name.className = styles.name;
+      name.textContent = item.name;
+      const description = document.createElement("p");
+      description.className = styles.description;
+      description.textContent = item.description;
+      const price = document.createElement("p");
+      price.textContent = `$${item.price}${item.price === 45 ? "+" : ""}`;
+      price.className = styles.price;
+
+      text.append(name, description);
+      info.append(text, price);
+
+      dish.append(info);
+    });
+    menuContainer.append(titleContainer, dish);
+
     container.append(menuContainer);
   });
   return container;

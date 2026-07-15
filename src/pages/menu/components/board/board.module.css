@@ -3,4 +3,55 @@
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--space-8) * 3) var(--space-8);
+}
+
+.title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+}
+
+.separator {
+  border: none;
+
+  border-top: 1px solid var(--clr-accent);
+  opacity: 0.25;
+
+  margin-block: var(--space-5, 1rem);
+  width: 100%;
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dish {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.name {
+  font-weight: var(--fw-medium);
+
+  line-height: var(--leading-loose);
+  margin-bottom: var(--space-2);
+}
+
+.description {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.price {
+  font-weight: var(--fw-medium);
+  color: var(--clr-active);
 }
