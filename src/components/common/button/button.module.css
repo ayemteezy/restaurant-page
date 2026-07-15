@@ -5,7 +5,7 @@ button {
 
   background-color: var(--clr-accent);
 
-  border: none;
+  border: 2px solid var(--clr-accent);
   border-radius: var(--radius-md);
 
   transition: var(--transition-smooth);
@@ -24,16 +24,18 @@ button {
 }
 
 .outline {
+  color: var(--clr-accent);
+
   border: 2px solid var(--clr-accent);
   border-radius: var(--radius-md);
   background-color: transparent;
 }
 
-:global(a):hover button.outline {
+a:hover button.outline {
   background-color: var(--clr-accent);
   color: var(--clr-primary);
 }
 
-:global(a):hover button {
+a:hover button {
   background-color: var(--clr-accent-hover);
 }

@@ -5,7 +5,6 @@ export const ROUTES = Object.freeze({
   CONTACT: "/contact",
 });
 
-// A clean array configuration makes generating UI loops incredibly easy
 export const NAV_ITEMS = [
   { label: "Home", path: ROUTES.HOME },
   { label: "Menu", path: ROUTES.MENU },

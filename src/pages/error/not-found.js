@@ -1,5 +1,7 @@
-import createButton from "../../components/common/button";
 import styles from "./not-found.module.css";
+
+import createImage from "../../components/common/image";
+import createButton from "../../components/common/button";
 
 import error from "@/assets/images/error.png";
 
@@ -7,10 +9,7 @@ export default function createNotFoundPage() {
   const container = document.createElement("div");
   container.className = styles.container;
 
-  const img = document.createElement("img");
-  img.src = error;
-  img.alt = "404 Error";
-  img.className = styles.error;
+  const img = createImage({ src: error, width: 300 });
 
   const textContainer = document.createElement("div");
   textContainer.classList = styles.textContainer;
@@ -27,8 +26,7 @@ export default function createNotFoundPage() {
   // button
   const buttonContainer = document.createElement("a");
   buttonContainer.href = "/";
-  const button = createButton({ label: "Return to homepage", size: "lg" });
-  // TODO: Create a button and image component
+  const button = createButton({ label: "Return to homepage" });
 
   buttonContainer.append(button);
   textContainer.append(title, desc);

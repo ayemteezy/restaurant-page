@@ -1,4 +1,7 @@
-export default function createLink({ href, activeClass = "" }, ...children) {
+export default function createLink(
+  { href = "/", activeClass = "" },
+  ...children
+) {
   const link = document.createElement("a");
   link.href = href;
 

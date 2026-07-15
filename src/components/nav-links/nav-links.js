@@ -1,6 +1,6 @@
 import styles from "./nav-links.module.css";
 
-import { NAV_ITEMS } from "../../constants/routes";
+import { NAV_ITEMS } from "@/constants/routes";
 import createNavItem from "../nav-item/nav-item";
 import createButton from "../common/button";
 

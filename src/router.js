@@ -4,29 +4,43 @@ import createNavbar from "@/components/navbar";
 
 import createLayout from "@/layout";
 import createHomePage from "@/pages/home";
-import createNotFoundPage from "./pages/error";
+import createMenuPage from "@/pages/menu";
+import createNotFoundPage from "@/pages/error";
+import createFooter from "@/components/footer";
 
 const pageMap = {
   [ROUTES.HOME]: createHomePage,
+  [ROUTES.MENU]: createMenuPage,
 };
 const navbar = createNavbar();
+const footer = createFooter();
 const layout = createLayout();
 
 export function initRouter() {
   const app = document.getElementById("root");
   if (!app) return;
 
-  if (!app.contains(navbar)) {
-    app.appendChild(navbar);
-    app.appendChild(layout);
-  }
+  app.appendChild(navbar);
+  app.appendChild(layout);
+  app.appendChild(footer);
 
   const pathname = window.location.pathname;
-  const createPage = pageMap[pathname] || createNotFoundPage;
-  const pageContent = createPage();
+
+  const createPage = pageMap[pathname];
+  const isNotFound = !createPage;
 
   layout.innerHTML = "";
+  const pageContent = isNotFound ? createNotFoundPage() : createPage();
   layout.append(pageContent);
+
+  if (isNotFound) {
+    footer.remove();
+  } else {
+    const app = document.getElementById("root");
+    if (app && !app.contains(footer)) {
+      app.appendChild(footer);
+    }
+  }
 }
 
 document.addEventListener("click", (event) => {

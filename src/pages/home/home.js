@@ -1,12 +1,16 @@
-import createImage from "../../components/common/image/image";
-import styles from "./home.module.css";
+import createHero from "./components/hero";
+import createAbout from "./components/about/about";
+import createFeature from "./components/feature/feature";
+import createCTA from "./components/cta";
 
 export default function createHomePage() {
-  const pageContainer = document.createElement("div");
-  const title = document.createElement("h1");
-  title.className = styles.title;
-  title.textContent = "this is my main content";
-  const img = createImage();
-  pageContainer.append(title, img);
-  return pageContainer;
+  const container = document.createElement("div");
+
+  const hero = createHero();
+  const about = createAbout();
+  const feature = createFeature();
+  const cta = createCTA();
+
+  container.append(hero, about, feature, cta);
+  return container;
 }

@@ -223,10 +223,6 @@ html {
   padding: 0;
 }
 
-html {
-  height: 100%;
-}
-
 /* Variables */
 :root {
   /* Neutrals */
@@ -244,7 +240,7 @@ html {
 
   --text-primary: var(--clr-dark);
   --text-secondary: var(--clr-primary);
-  --text-muted: oklch(56.7% 0.053 74.6);
+  --text-muted: oklch(56.7% 0.051 52.6);
 
   /* Font Families */
   --font-sans: "Space Grotesk", sans-serif;
@@ -266,14 +262,14 @@ html {
   --fs-2xl: 2.441rem; /* 39px */
 
   /* Line Heights */
-  --lh-tight: 1.25; /* For headings */
-  --lh-normal: 1.5; /* For readable paragraphs */
-  --lh-loose: 1.75;
+  --leading-tight: 1.25; /* For headings */
+  --leading-normal: 1.5; /* For readable paragraphs */
+  --leading-loose: 1.75;
 
   /* Letter Spacing */
   --tracking-tight: -0.02em; /* Makes headings look crisp and punchy */
   --tracking-normal: 0;
-  --tracking-wide: 0.05em; /* Perfect for all-caps tags or buttons */
+  --tracking-wide: 0.1em; /* Perfect for all-caps tags or buttons */
 
   /* Spacing  */
   --space-1: 0.25rem; /* 4px */
@@ -317,9 +313,26 @@ html {
 }
 
 /* Globals */
-body,
-#root {
+html,
+body {
+  margin: 0;
+  padding: 0;
   height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+  background-color: var(--clr-secondary);
+}
+
+footer {
+  flex-shrink: 0;
 }
 
 #layout-wrapper {
