@@ -1,0 +1,74 @@
+.container {
+  padding-block: calc(var(--space-8) * 2);
+
+  background-color: var(--clr-white);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--space-8);
+}
+
+.header {
+  text-align: center;
+}
+
+.sub {
+  text-transform: uppercase;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--clr-active);
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-size: 2.25rem;
+  font-family: var(--font-serif);
+  font-weight: var(--fw-medium);
+}
+
+.teamContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+}
+
+.teamContent {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.teamTitle {
+  font-weight: var(--fw-medium);
+  color: var(--clr-active);
+
+  margin-bottom: var(--space-4);
+}
+
+.body {
+  color: var(--text-muted);
+}
+
+.name {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--space-3);
+}
+
+.img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+
+  margin-bottom: var(--space-4);
+
+  object-position: center 35%;
+  object-fit: cover;
+}

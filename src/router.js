@@ -5,12 +5,15 @@ import createNavbar from "@/components/navbar";
 import createLayout from "@/layout";
 import createHomePage from "@/pages/home";
 import createMenuPage from "@/pages/menu";
+import createAboutPage from "@/pages/about";
 import createNotFoundPage from "@/pages/error";
+
 import createFooter from "@/components/footer";
 
 const pageMap = {
   [ROUTES.HOME]: createHomePage,
   [ROUTES.MENU]: createMenuPage,
+  [ROUTES.ABOUT]: createAboutPage,
 };
 const navbar = createNavbar();
 const footer = createFooter();
