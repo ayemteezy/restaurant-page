@@ -1,4 +1,4 @@
-import { ROUTES } from "@/constants/routes";
+import { ROUTES, BASE_PATH } from "@/constants/routes";
 
 import createNavbar from "@/components/navbar";
 
@@ -52,9 +52,9 @@ document.addEventListener("click", (event) => {
   const anchor = event.target.closest("a");
   if (!anchor) return;
 
-  const href = anchor.getAttribute("href");
+  const href = anchor.getAttribute("href") || "/";
 
-  if (href && href.startsWith("/")) {
+  if (href.startsWith("/")) {
     if (
       event.button === 0 &&
       !event.ctrlKey &&
@@ -64,7 +64,7 @@ document.addEventListener("click", (event) => {
     ) {
       event.preventDefault();
 
-      window.history.pushState(null, null, href);
+      window.history.pushState(null, null, BASE_PATH + href);
       window.dispatchEvent(new PopStateEvent("popstate"));
     }
   }

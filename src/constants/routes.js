@@ -5,6 +5,8 @@ export const ROUTES = Object.freeze({
   CONTACT: "/contact",
 });
 
+export const BASE_PATH = "/restaurant-page";
+
 export const NAV_ITEMS = [
   { label: "Home", path: ROUTES.HOME },
   { label: "Menu", path: ROUTES.MENU },

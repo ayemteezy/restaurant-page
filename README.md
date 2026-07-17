@@ -41,7 +41,7 @@
     <a href="https://github.com/ayemteezy/restaurant-page"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/ayemteezy/restaurant-page">View Demo</a>
+    <a href="https://ayemteezy.github.io/restaurant-page/">View Demo</a>
     &middot;
     <a href="https://github.com/ayemteezy/restaurant-page/issues/new?labels=bug&template=bug-report.md">Report Bug</a>
     &middot;
@@ -80,7 +80,7 @@
 
 ## About The Project
 
-[![Restaurant Page Screen Shot][product-screenshot]](https://example.com)
+[![Restaurant Page Screen Shot][product-screenshot]](https://ayemteezy.github.io/restaurant-page/)
 
 This project is part of [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page)'s JavaScript course. The goal was to build a multi-page restaurant website that behaves like a single-page application — all pages are rendered dynamically with JavaScript and swapped in and out of the DOM without a full page reload, with Webpack handling bundling, asset optimization, and the production build.
 
@@ -177,7 +177,7 @@ This outputs static files to the `dist/` folder.
 
 ## Project Structure
 
-````text
+```text
 restaurant-page/
 ├── .github/
 │ └── ISSUE_TEMPLATE/ # Bug report / feature request templates
@@ -304,5 +304,3 @@ Project Link: [https://github.com/ayemteezy/restaurant-page](https://github.com/
 [JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [Webpack]: https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black
 [Webpack-url]: https://webpack.js.org/
-```
-````
