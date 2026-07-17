@@ -1,5 +1,6 @@
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
 import sharpAdapter from "responsive-loader/sharp.js";
 
@@ -14,6 +15,14 @@ export default {
     new HtmlWebpackPlugin({
       title: "Odin Restaurant Page",
       template: path.resolve(import.meta.dirname, "../public/index.html"),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(import.meta.dirname, "../public/404.html"),
+          to: path.resolve(import.meta.dirname, "../dist/404.html"),
+        },
+      ],
     }),
     new ESLintPlugin({
       extensions: ["js"],
