@@ -177,25 +177,35 @@ This outputs static files to the `dist/` folder.
 
 ## Project Structure
 
-```
-src/
-├── assets/            # Images, icons, fonts
-├── components/        # Shared UI components (navbar, footer, buttons, etc.)
-├── layout/            # App shell / layout wrapper
-├── pages/             # Route-level pages (home, about, menu, contact, error)
-│   ├── home/
-│   ├── about/
-│   ├── menu/
-│   ├── contact/
-│   └── error/
-├── app.js             # App bootstrap
-├── router.js           # Client-side router
-└── index.js            # Entry point
+````text
+restaurant-page/
+├── .github/
+│ └── ISSUE_TEMPLATE/ # Bug report / feature request templates
+├── build/
+│ ├── webpack.common.js # Shared Webpack config
+│ ├── webpack.dev.js # Development config
+│ └── webpack.prod.js # Production config
+├── public/ # Static assets copied as-is (favicon, HTML template, etc.)
+├── src/
+│ ├── assets/ # Images, icons, fonts
+│ ├── components/ # Shared UI components (navbar, footer, buttons, etc.)
+│ ├── layout/ # App shell / layout wrapper
+│ ├── pages/ # Route-level pages (home, about, menu, contact, error)
+│ │ ├── home/
+│ │ ├── about/
+│ │ ├── menu/
+│ │ ├── contact/
+│ │ └── error/
+│ ├── app.js # App bootstrap
+│ ├── router.js # Client-side router
+│ └── index.js # Entry point
+├── .gitattributes
+├── .gitignore
+├── eslint.config.js
+├── package.json
+├── package-lock.json
+└── README.md
 
-build/
-├── webpack.common.js   # Shared Webpack config
-├── webpack.dev.js       # Development config
-└── webpack.prod.js      # Production config
 ```
 
 <!-- ROADMAP -->
@@ -294,3 +304,5 @@ Project Link: [https://github.com/ayemteezy/restaurant-page](https://github.com/
 [JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [Webpack]: https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black
 [Webpack-url]: https://webpack.js.org/
+```
+````
