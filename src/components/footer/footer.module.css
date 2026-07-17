@@ -96,8 +96,8 @@
 .separator {
   border: none;
 
-  border-top: 1px solid var(--text-muted);
-
+  border-top: 1px solid var(--clr-accent);
+  opacity: 0.2;
   margin-block: var(--space-4, 1rem);
   width: 100%;
 }

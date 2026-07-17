@@ -240,7 +240,7 @@ html {
 
   --text-primary: var(--clr-dark);
   --text-secondary: var(--clr-primary);
-  --text-muted: oklch(56.7% 0.051 52.6);
+  --text-muted: oklch(56.7% 0.031 12.6);
 
   /* Font Families */
   --font-sans: "Space Grotesk", sans-serif;

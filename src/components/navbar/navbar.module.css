@@ -1,4 +1,4 @@
-header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@ header {
   box-shadow: var(--shadow-md);
 }
 
-nav {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;

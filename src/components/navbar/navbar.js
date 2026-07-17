@@ -5,9 +5,11 @@ import createNavLinks from "../nav-links";
 
 export default function createNavbar() {
   const header = document.createElement("header");
+  header.className = styles.header;
 
   const nav = document.createElement("nav");
-  nav.className = "container";
+
+  nav.classList.add("container", styles.nav);
 
   // logo
   const logo = createLogo();

@@ -48,7 +48,10 @@ export default merge(common, {
           {
             loader: "css-loader",
             options: {
-              modules: { localIdentName: "[hash:base64:8]" }, // Highly secure, tiny class names for production
+              modules: {
+                localIdentName: "[hash:base64:8]",
+                namedExport: false,
+              }, // Highly secure, tiny class names for production
             },
           },
         ],

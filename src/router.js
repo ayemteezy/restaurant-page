@@ -6,6 +6,7 @@ import createLayout from "@/layout";
 import createHomePage from "@/pages/home";
 import createMenuPage from "@/pages/menu";
 import createAboutPage from "@/pages/about";
+import createContactPage from "@/pages/contact";
 import createNotFoundPage from "@/pages/error";
 
 import createFooter from "@/components/footer";
@@ -14,6 +15,7 @@ const pageMap = {
   [ROUTES.HOME]: createHomePage,
   [ROUTES.MENU]: createMenuPage,
   [ROUTES.ABOUT]: createAboutPage,
+  [ROUTES.CONTACT]: createContactPage,
 };
 const navbar = createNavbar();
 const footer = createFooter();
