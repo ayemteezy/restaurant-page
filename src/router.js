@@ -24,20 +24,18 @@ const layout = createLayout();
 export function initRouter() {
   const app = document.getElementById("root");
   if (!app) return;
-
   app.appendChild(navbar);
   app.appendChild(layout);
   app.appendChild(footer);
 
-  const pathname = window.location.pathname;
+  let pathname = window.location.pathname.replace(BASE_PATH, "");
+  if (!pathname.startsWith("/")) pathname = "/" + pathname;
 
   const createPage = pageMap[pathname];
   const isNotFound = !createPage;
-
   layout.innerHTML = "";
   const pageContent = isNotFound ? createNotFoundPage() : createPage();
   layout.append(pageContent);
-
   if (isNotFound) {
     footer.remove();
   } else {
