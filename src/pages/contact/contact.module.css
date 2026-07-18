@@ -1,9 +1,0 @@
-.container {
-  padding-block: calc(var(--space-8) * 1.5);
-}
-
-.content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-6);
-}

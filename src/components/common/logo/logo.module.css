@@ -1,7 +1,0 @@
-.label {
-  font-family: var(--font-sans);
-  font-size: var(--fs-lg);
-
-  text-transform: uppercase;
-  color: var(--clr-dark);
-}
