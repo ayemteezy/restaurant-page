@@ -1,7 +1,5 @@
 import styles from "./nav-item.module.css";
 
-import { BASE_PATH } from "@/constants/routes";
-
 import createLink from "../common/link";
 
 export default function createNavItem(label, href) {
