@@ -44,6 +44,8 @@ export function initRouter() {
       app.appendChild(footer);
     }
   }
+
+  window.dispatchEvent(new PopStateEvent("popstate"));
 }
 
 document.addEventListener("click", (event) => {
