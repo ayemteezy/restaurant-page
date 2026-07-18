@@ -1,11 +1,11 @@
 import styles from "./nav-item.module.css";
 
+import { BASE_PATH } from "@/constants/routes";
+
 import createLink from "../common/link";
 
 export default function createNavItem(label, href) {
   const listItem = document.createElement("li");
-
-  const isActive = window.location.pathname === href;
 
   const link = createLink(
     {
@@ -16,7 +16,6 @@ export default function createNavItem(label, href) {
   );
   link.href = href;
   link.className = styles.link;
-  link.classList.toggle(styles.active, isActive);
   link.textContent = label;
 
   listItem.append(link);
